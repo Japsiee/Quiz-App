@@ -77,11 +77,6 @@ const prepareQuestion = () => {
 		prepare.classList.remove('d-none');
 		start.classList.add('d-none');
 	})
-	
-	nextQuestion.addEventListener('click', () => {
-		answer.innerHTML = '';
-		prepareQuestion();
-	});
 
 	const fetchQuestion = async () => {
 		const endPoint = 'https://opentdb.com/api.php?amount=1&category=9&type=boolean';
@@ -111,6 +106,11 @@ const prepareQuestion = () => {
 		console.error(err);
 	})	
 }
+
+nextQuestion.addEventListener('click', () => {
+	answer.innerHTML = '';
+	prepareQuestion();
+});
 
 prepareQuestion();
 
